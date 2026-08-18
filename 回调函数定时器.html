@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>回调函数$定时器实操演示</title>
+    </head>
+    <body>
+     <button id="startBtn">启动定时器</button>
+     <button id="stopBtn">停止循环定时器</button>
+     <p id="showText">等待计时...</p>
+     <script>
+        let intervalTimerId;//全局变量：保存循环定时器ID，后续用来清除
+        function oneTimeTaskCallback(){console.log(" ✔ setTimeout,单词定时器回调执行：3秒时间到！");
+        document.getElementById("showText").innerText="单次定时任务已执行完毕";}
+        function loopTaskCallback(){const nowTime=new Date().toLocaleTimeString();
+            console.log("⏰ setInterval 循环定时器回调执行，当前时间：",nowTime);
+            document.getElementById("showText").innerText="循环计时："+nowTime;}
+        document.getElementById("startBtn").addEventListener("click",function(){//注册事件监听器绑定按钮点击=====
+            console.log("👉用户点击了【启动定时器】按钮（事件回调触发）");//按钮点击传入的function也是回调 点击事件触发才执行
+            setTimeout(oneTimeTaskCallback,3000);//单次定时器settimeout,3000毫秒后执行oneTimeTaskCallback回调只跑一次
+            intervalTimerId=setInterval(loopTaskCallback,1000);//循环定时器setInterval:每1000毫秒执行回调反复执行
+            });
+        document.getElementById("stopBtn").addEventListener("click",function(){
+                console.log("👉用户点击了【停止循环定时器】按钮（事件回调触发）");
+                clearInterval(intervalTimerId);//clearInterval轻触循环定时器，looptaskcallback就不会再被调用
+                document.getElementById("showText").innerText="循环定时器已手动停止";
+                console.log("🛑已调用clearInterval结束循环计时");});
+        window.addEventListener("load",function(){          //--window load bom事件:注册页面加载完成回调==
+                console.log("🌏 window load 事件回调：整个页面所有资源加载完成了");
+            });
+     </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>load事件演示</title>
+</head>
+<body>
+    <!--js写在div前面-->
+    <script>
+        window.addEventListener("load",function () {
+            //等全面加载完毕，div已经存在，此时再获取元素
+            let demo=document.getElementById("demo");
+            let btn=document.getElementById("btn");
+            
+            console.log("使用load后获取元素：",demo);//正常拿到DOM对象
+            //修改文字颜色
+            demo.style.color="blue";
+            //demo.innerText="页面加载完成啦！我被Js修改了内容";
+            console.log("打印瞬间快照：",demo.outerHTML);
+            console.log("打印瞬间快照：",demo.innerHTML);
+            console.log("内部文本：",demo.innerText);
+            //给按钮绑定事件
+            btn.addEventListener("click",function(){alert("操作成功啦，DOM生效！");});
+
+        })
+    </script>
+    <div id="demo">原始文字</div>
+    <button id="btn">点我测试</button>
+    <!--再加一张图片，load会等图片加载完才执行内部代码-->
+    <img src="media/破局.jpg" alt="测试图片">
+</body>
+</html>

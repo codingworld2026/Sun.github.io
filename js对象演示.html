@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS对象用法演示</title>
+    </head>
+    <body>
+        <script>
+            let person={
+                name:"张三",
+                age:22,
+                gender:"男",
+                sayHello:function(){console.log("大家好，我是"+this.name+",今年"+this.age+"岁");}
+    }
+    console.log(person);
+    console.log("读取姓名：",person.name);
+    console.log("读取年龄：",person.age);
+    person.sayHello();
+    person.height=175;
+    person.weight=65;
+    console.log("新增身高体重属性后：",person.height,person.weight);
+    person.age=23;
+    person.name="小张";
+    console.log("修行姓名年龄后调用方法：");
+    person.sayHello();
+    delete person.weitht;
+    console.log("删除weight属性后对象",person);
+    console.log("方括号读取姓名：",person["name"]);
+    person["job"]="前端学员";
+    
+    console.log("新增job：",person.job);
+
+    let car=new Object();
+
+    car.band="比亚迪";
+    car.price=150000;
+    car.run=function(){console.log(this.brand+"汽车正在进行驾驶");}
+    console.log("\n===new Object创建的car对象===");
+    //自定义构造函数，批量创建多个同类对象（实例化），定义构造函数（用来生成多个结构一样的对象实例）
+    function Student(stuName,stuAge){
+        this.name=stuName;
+        this.age=stuAge;
+        this.study=function(){console.log(this.name+"正在学习JavaScript");}
+    }
+    let s1=new Student("李明",20);
+    let s2=new Student("王芳",19);
+    console.log("\n===构建函数创造实例s1===");
+    console.log(s2);
+    s2.study();
+    s1.score==95;
+    console.log("仅给s1新增成绩：",s1.score);
+    console.log("s2有没有score？",s2.score);
+    let user1={username:"test"};
+    let user2=user1;
+    user2.username="修改后的名字";
+    console.log("\n===对象引用赋值演示===");
+    console.log("user1.name:",user1.username);
+    let user3={...user1};
+    user3.username="独立新用户";
+    console.log("user1不受user3影响：",user1.username);
+    console.log("user3新对象：",user3.username);
+    console.log("\n===for ...in遍历person对象所有属性===");
+
+    for(let key in person){console.log("属性名："+key+",对应值：",person[key])};
+
+        </script>
+    </body>
+</html>

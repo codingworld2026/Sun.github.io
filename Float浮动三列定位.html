@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动+三列布局+定位综合演示</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .clearfix::after{
+            content:"☆";
+            display: block;
+            height:0;
+            clear:both;
+            visibility: hidden;
+        }
+        .clearfix{
+            zoom:1;
+        }
+        /*外层大容器*/
+        .wrap{
+            width: 1000px;
+            margin:30px auto;
+            border:2px solid #333;
+        }
+        .left{
+            width:200px;
+            height:300px;
+            background:#a0d2eb;
+            float:left;
+        }
+        .center{
+            width:600px;
+            height:300px;
+            background:#d0e7d2;
+        }
+        .right{
+            width:200px;
+            height:300px;
+            background:#fff3cd;
+            float:left;
+        }
+        .pos-box{
+            width:600px;
+            height:300px;
+            margin:60px auto;
+            border:2px dashed #666;
+            position:relative;
+            background:#f8f9fa;
+        }
+        /*子元素绝对定位*/
+        .abs-demo{
+            width:200px;
+            height:60px;
+            background:#ff6b6b;
+            color:white;
+            text-align:center;
+            line-height:60px;
+            border-radius:8px;
+            position:absolute;
+            right:20px;
+            bottom:20px;
+        }
+        /*单独演示相对定位(自身偏移不脱离文档流*/
+        .relative-demo{
+            width:150px;
+            height:30px;
+            background:#4ecdc4;
+            margin-top:2px;
+            /*相对定位：相对于自己原来位置挪动*/
+            position:relative;
+            left:3px;
+            top:1px;
+        }
+        /*底部页脚必须清除浮动，否则会浮动元素顶上去*/
+        footer{
+            height:60px;
+            line-height:60px;
+            text-align:center;
+            background:#ced4da;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap clearfix"> 
+        <!--浮动布局;左 中 右-->
+        <div class="left">左侧边栏float:left</div>
+        <div class="center">中间主体内容</div>
+        <div class="right">右侧边栏</div>
+        <!--定位演示模块-->
+        <div class="pos-box">父容器 position:relative
+            <!--绝对定位，挂靠在父盒子右下角-->
+            <div class="abs-demo">absolute绝对定位</div>
+        </div>
+        <!--纯相对定位演示-->
+        <div class="relative-demo">relative 相对定位</div>
+        <!--页脚:依靠父容器的clearfix清除上方浮动 正常往下排布-->
+        <footer>页面底部footer(清除浮动后正常显示)</footer>
+    </div>
+</body>
+</html>

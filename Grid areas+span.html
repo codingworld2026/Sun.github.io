@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Grid areas +span跨列展示</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            .container{
+                width:900px;
+                /*height: 500px;*/
+                /*border:1px solid #222;*/
+                display:grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: 80px auto 60px;
+                gap:10px;
+                grid-template-areas: 
+                "header header header"
+                "aside main extra"
+                "footer footer footer";
+            }
+            .item{
+               
+                border:1px solid #666;
+                font-size: 18px;
+                background-color: #f5f5f5;
+            }
+            .header{grid-area:header;background-color: #cfe2ff;}
+            .aside{grid-area:aside;background-color: #e2e3e5;}
+            .main{grid-area:main;background:#d1e7dd;}
+            .extra{grid-area:extra;background:#fff3cd;}
+            .footer{grid-area:footer;background-color: #cfe2ff;}
+            .cross-col{grid-column:span 2;background-color: #ffd6a5;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!--区域布局部分-->
+            <div class="item header">header页眉(跨3列)</div>
+            <div class="item aside">aside左侧边栏</div>
+            <div class="item main">main主体内容</div>
+            <div class="item extra">extra附加栏</div>
+            <div class="item footer">footer页脚(跨3列)</div>
+            <hr style="margin:40px 0">
+            <!--单独演示span跨列-->
+            <div class="container" style="height:200px">
+                <div class="item cross-col">grid-column:span 2 横跨2列</div>
+                <div class="item">单独1列</div>
+            </div>
+        </div>
+    </body>
+</html>

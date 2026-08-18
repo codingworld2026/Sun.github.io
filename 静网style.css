@@ -1,0 +1,17 @@
+nav{
+    background: #333;
+    padding: 12px;
+}
+nav a{
+    color: greenyellow;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+nav a:hover{
+    color:orange;
+    text-decoration: underline;
+}
+body{
+    font-family: 微软雅黑;
+}

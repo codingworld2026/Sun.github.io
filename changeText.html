@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Example</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+            margin-right: 50px;
+        }
+        #demoText{
+            font-size: 18px;
+            color:333;
+        }
+        #changeTextBtn{
+            padding:10px 20px;
+            font-size: 16px;
+            cursor:pointer;
+            background-color: greenyellow;
+            border: 1px solid#999;
+        }
+        #changeTextBtn:hover{color: #fff;background-color: brown;}
+        #changeTextBtn:active{background-color: red;}
+        #changeTextBtn:focus{outline:2px solid blue;}
+    </style>
+</head>
+<body>
+    <h1>JavaScript Variables Example</h1>
+    <p id="demoText">Welcome to this simple web page!</p>
+    <button id="changeTextBtn" onclick="changeText()">ChangeText</button>
+    <script>
+        function changeText(){
+            //let greeting="Hello,";
+            //let name="Student";
+           //let combinedText=greeting+name+"! Welcome to the page";
+            const demoTextElement=document.getElementById("demoText");
+            const originalText="Welcome to this simple web page!";
+            const newText="Hello,Student! Welcome to the page!";
+            //demoTextElement.textContent=combinedText;
+            if(demoTextElement.textContent==newText){
+                demoTextElement.textContent=originalText;
+            }
+            else{demoTextElement.textContent=newText;}
+        }
+    </script>
+</body>
+</html>

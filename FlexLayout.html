@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex Layout Example</title>
+        <style>
+            .flex-container{
+                
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                height:200px;
+                border: 1px solid #ccc;
+            }
+            .flex-item{
+                flex: 1 0 auto;
+                background-color: #970d67;
+                padding:10px;
+                border:1px solid #999;
+            }
+            .flex-item.item-two{
+                order: 2;
+                background-color: green;
+            }
+            .flex-exercise{
+                display: flex;
+                flex-direction: row;
+                /*flex-wrap: wrap;*/
+                direction:ltr;
+                /*padding:25px 10px;*/
+                /*gap: 10px;*/
+                justify-content:space-between;
+                align-items:center;
+                /*overflow-x: hidden;*/
+                background-color: chartreuse;
+                /*padding: 50px 50px;*/
+                margin-top: 50px;
+                border:1px solid rgb(173, 76, 92);
+            }
+            .flex-exercise div[class^="flex-"]{
+                flex: 1 0 auto;
+                padding:12px;
+                border:1px solid #666;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">Flex Item1</div>
+            <div class="flex-item item-two">Flex Item2</div>
+            <div class="flex-item">Flex Item3</div>
+        </div>
+        <div class="flex-exercise">
+            <div class="flex-A">flex a</div>
+            <div class="flex-B">flex b</div>
+            <div class="flex-C">flex c</div>
+            <div class="flex-D">flex d</div>
+            <div class="flex-E">flex e</div>
+            <div class="flex-F">flex f</div>
+            <div class="flex-G">flex g</div>
+            <div class="flex-H">flex h</div>
+
+        </div>
+    </body>
+</html>

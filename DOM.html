@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<body>
+  <a id="link" href="demo.html">测试链接</a>
+
+  <script>
+    // 获取a标签DOM对象
+    const link = document.getElementById('link');
+
+    console.log("====初始状态====")
+    // attribute：读取HTML标签上原始写的文本
+    console.log('getAttribute href：', link.getAttribute('href'));
+    // property：DOM对象内存属性
+    console.log('link.href 属性：', link.href);
+    
+  </script>
+</body>
+</html>

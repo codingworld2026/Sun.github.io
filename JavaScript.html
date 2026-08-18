@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<html lang="zh-CN">
+<body>
+  <input type="checkbox" checked="checked" id="ck">
+
+  <script>
+    function name(params) {
+      
+    }
+    function sayHi(){}
+    const ck = document.getElementById('ck');
+
+    // 1. 获取 HTML标签上书写的【attribute】
+    console.log("attribute checked:", ck.getAttribute('checked')); 
+    // 输出："checked" 字符串
+
+    // 2. 获取内存DOM对象的【property】
+    console.log("property checked:", ck.checked); 
+    // 输出：true 布尔值
+
+    // 手动取消勾选
+    ck.checked = false;
+    console.log("\n===取消勾选之后===")
+    console.log("property checked：", ck.checked); // false
+
+    // ⭐重点现象：标签上的attribute 不会自动变化！
+    console.log("attribute checked：", ck.getAttribute('checked')); // 依旧是 "checked"
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keyname" content="关键字1,关键字2">
+        <meta name="description" content="网页描述">
+        <link rel="shortcut icon" href="media/标签图标.png" type="image/x-icon">
+        <title>HTML文档结构</title>
+        <style>
+         h1{background-color: chartreuse ;}
+         p{background-color: forestgreen;}
+        /*a {color: green;text-decoration: none;}*/
+        a:link{color: green;text-decoration: none;}/*未访问（严格按照LVHA顺序）*/
+        a:visited{color: brown;}/*访问后*/
+        a:hover{color: blueviolet;text-decoration:underline;}/*悬浮*/
+        a:active{color:deeppink;}/*点击按住*/
+        </style>
+        html{scroll-behavior:smooth}
+    </head>
+    <body>
+        <h1>Web页面标题</h1>
+        这是一个基本的文档结构
+        <p>Web页面内容</p>
+        <img src="media/RC.jpg" title="钢铁侠"  width="300" style="display:block;" alt="图片描述">
+        <a href="http://www.baidu.com" style="text-decoration: none;" >百度地址</a><br>
+        <a href="media/PDF格式的下载演示.docx" download>PDF文件</a>
+        <br>
+        <hr>
+        <p>
+            <a href="#part1" target="_blank">锚点新标签打开</a>
+            <br>
+            <a href="#section2">跳转到第二部分</a>
+        </p>
+        <a href="http://www.baidu.com" target="_blank">百度新开窗户</a>
+        <a href="http://www.baidu.com" target="myWindow">指定窗口</a>
+        <a href="http://www.bilibili.com" target="mywindow">指定打开B站</a>
+        <a href="mailto:"></a>
+        <a href="tel:+"></a>
+        <a href="http://www.trae.cn" target="_blank">trae的地址</a>
+        <a href="http://www.mi.com" target="_blank" style="color:orange; ">小米链接</a>
+        <form action="FormProcessingProgram" method="post">
+          <input type="text" name="username" placeholder="用户名" title="请输入名字">
+          <input type="password" name="password" placeholder="密码">
+          <input type="button" value="确认">
+          <input type="checkbox" name="action" id="ab"><br>
+          <input type="radio" name="gender" id="male" value="male">male
+          <label for="male">男</label>
+          <input type="radio" name="gender" id="female" value="female" checked>female
+          <label for="female">女</label>
+          <input type="submit"w value="提交"><br>
+          <input type="checkbox" name="hobby" id="reading" name="reading">Reading
+          <input type="checkbox" name="hobby" id="traveliing" name="traveling">traveling
+            <select name="province" id="">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="guangzhou">广州</option>
+                <option value="shenzhen">深圳</option>
+            </select>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+            <button type="button">自定义</button>
+            <select name="" id=""></select>
+           <select name="" id="">
+            <option value="1">选项1</option>
+            <option value="2">选项2</option>
+            <option value="3">选项3</option>
+           </select>
+           <br>
+           <h2 id="section2"></h2>
+           <input type="checkbox" name="fruit" id="apple" value="apple">
+           <label for="apple">苹果</label>
+           <input type="checkbox" name="fruit" id="part1" value="banana">
+           <label for="banana">香蕉</label>
+           <input type="checkbox" name="fruit" id="orange" value="orange">
+           <label for="orange">橙子</label>
+           <input type="file" name="myfile" id="file-upload">
+
+           <label for="file-upload">文件上传</label><br>
+           <audio src="media/wtf.mp3" controls muted autoplay loop ></audio><br>
+           <video src="media/broken.mp4"controls width=300 poster="media/破局.jpg">破局</video>
+        </form>
+        <audio >
+            <source src="media/wtf.mp3" type="audio/wav">
+        </audio>
+        <audio controls width="300">
+            <source src="media/wtf.mp3" type="audio/mp3">
+           <track kind="subtitles" src="media/english.vtt" srclang="en" label="english.vtt" default>
+        </audio> <br>
+
+        <video controls width="300">
+            <source src="media/WTF.mp4" type="video/mp4">
+            <track kind="subtitles" src="media/english.vtt" srclang="en" label="english.vtt" default>
+        </video>
+        <form action="FormProcessing" method="post" enctype="multipart/form-data">
+            <input type="text" name="username" required pattern="^[0-9]+$"    placeholder="用户名">
+            <input type="password" name="password" minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,12}" title="只能输入纯数字" placeholder="密码">
+            <input type="submit" value="login"> <br>
+            <input type="email" id="email"   name="email" pattern="^[a-z0-9./%+-]+@[a-z0-9._]+\.[a-z]{2,}$" placeholder="邮箱地址">
+            <label for="email">邮箱地址</label>
+            <input type="number" id="age"    name="age" min="18" max="60" step="2" placeholder="年龄">
+            <label for="age">年龄</label>
+        </form>
+        <table border="1" cellpadding="6">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>城市</th>
+                </tr>
+            </thead>
+            <!主体部分>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>22</td>
+                    <td>上海</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>25</td>
+                    <td>北京</td>
+                </tr>
+            </tbody>
+            <--!汇总->
+            <tfoot>
+                <tr>
+                    <td colspan="3">一共两条人员数据
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<body>
+    <h2>页面B</h2>
+    <button id="toA">后退回到A</button>
+    <button id="toC">前往页面C</button>
+    <button id="goForward">前进到C</button>
+    <script>
+        document.getElementById("toA").onclick=function(){
+            window.history.back();
+        }
+        document.getElementById("toC").onclick=function(){
+            window.location.href="c.html";
+        }
+        document.getElementById("goForward").onclick=function(){
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>

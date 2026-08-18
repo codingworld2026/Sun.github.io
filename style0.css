@@ -1,0 +1,67 @@
+ html{font-size: 16px;}/*主体性设置，全局设置*/
+            h1{color: blue;}
+            p{color: blue;}
+            /*h1,p{color: dodgerblue;}*/
+            .red-text
+            {color: red;}
+            p {color: blue;font-weight: bolder;}
+            #title n{
+                color: red;
+                font-size: larger;
+                text-align: center;
+            }
+            #button {
+                background-color: rgba(49, 17, 190, 0.589);
+                color: aqua;
+                display: inline-block;
+                margin-top: 50px;
+                margin-bottom: 30px;
+                padding: 10px 500px;
+            }
+             .box[data-color="red"]{
+            background-color:red;
+            color:white;
+            font-weight:bold;
+            padding:10px;
+        }
+        img[src$=".jpg"]{
+            border: 1px solid greenyellow;
+        }
+        [class^="box"]{
+            background-color: aqua;
+        }
+        .box[data-color*="lue"],
+        .link[data-color*="ed"]{
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            display: block;
+        }
+        .box p{color: red;font-size: 20px;}
+        .box>p{color: blue; font-size: 2em;}
+        h2+p{background: yellow;}
+        h2~p{border: 1px solid green;}
+        body>div{background-color:brown;}
+        .first {background-image: url("media/Catalina.jpeg"),url("media/RC.jpg");
+            background-position: left top,center;background-repeat: no-repeat,no-repeat;
+        background-size: 400px 100%;}
+        .three {width: 800px;height: 200px; background-color:rgb(100, 201, 100); 
+             background-image:url("media/Catalina.jpeg"),url("media/破局.jpg");
+             background-size: 200px 100%,200px 100%; 
+            background-repeat: no-repeat,no-repeat;
+            background-position: left top,right top;
+            background-size: contain,contain;}
+        .bigbox{width:800px;height: 200px;display: flex;}
+        .side{width:400px;height:100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;}
+        .pic1{background-image: url("media/Catalina.jpeg");}
+        .pic2{background-image: url("media/破局.jpg");}
+        .demo-ul{list-style-type: disc;list-style-position: outside;padding-left: 20px;}
+        .demo-ol{list-style-type: upper-roman;}
+        .no-dot{list-style:none;padding-left: 50px;}
+
+        table {border-collapse: separate;}
+        th,td{ border: 1px solid #000;padding: 8px;}
+        th{background-color: #f200f2;/*表头背景颜色*/ font-weight: bold;}
